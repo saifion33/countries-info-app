@@ -1,15 +1,33 @@
 
+import CountryDetails from './components/CountryDetails';
 import HeadBar from './components/HeadBar';
 import Home from './components/Home';
-import StyleState from './context/style/styleState';
+
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes
+} from "react-router-dom";
+import { useContext, useEffect } from 'react';
+import context from './context/context';
+
 
 function App() {
+  const { allCountries, fetchCountries } = useContext(context)
+  useEffect(() => {
+    fetchCountries();
+    // eslint-disable-next-line
+  }, [])
   return (
     <>
-      <StyleState>
+      <Router>
         <HeadBar />
-        <Home/>
-      </StyleState>
+        <Routes>
+          <Route exact path='/all-countries' element={<Home />}></Route>
+          {allCountries.map(country => <Route exact path={`all-countries/${country.name}`} key={country.name} element={<CountryDetails countryDetails={country} />}></Route>
+          )}
+        </Routes>
+      </Router>
     </>
   );
 }

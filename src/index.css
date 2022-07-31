@@ -1,14 +1,37 @@
-body {
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-    color: hsl(0, 0%, 76%);
+html {
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+.head-bar {
+  padding: 1.4rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 3px 3px 10px hsl(0, 0%, 80%);
+  box-sizing: border-box;
+}
+
+.head-bar p {
+  margin-left: 0.5rem;
+  font-weight: 600;
+}
+
+.head-bar h2 {
+  letter-spacing: 0.1rem;
+}
+
+.home {
+  height: fit-content;
+}
+
+.country-card-container {
+  height: 100%;
+  padding: 3rem;
+  display: flex;
 }

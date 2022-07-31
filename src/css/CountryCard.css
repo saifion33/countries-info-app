@@ -1,0 +1,35 @@
+.country-card {
+    width: 15rem;
+    height: 21rem;
+    border-radius: 5px;
+    padding: 0.5rem;
+    background-color: red;
+    box-shadow: 0 0 5px hsl(0, 0%, 80%);
+    cursor: pointer;
+}
+
+.flag-image {
+    max-width: 100%;
+}
+
+.description-container {
+    padding: 0 0.8rem;
+}
+
+.country-name {
+    font-weight: 800;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.description-container p {
+    margin: 0.2rem 0;
+    font-weight: 600;
+    letter-spacing: 1px;
+
+}
+
+.description-container span {
+    font-weight: 300;
+    letter-spacing: 0;
+}

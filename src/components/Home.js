@@ -1,18 +1,16 @@
 import React, { useContext } from 'react'
-import StyleContext from '../context/style/styleContext'
-import SearchAndFilter from './SearchAndFilter'
+import context from '../context/context'
+import CountryCardContainer from './CountryCardContainer';
+import SearchAndFilter from './SearchAndFilter';
+
 
 const Home = () => {
-    const { stylesheet } = useContext(StyleContext);
+    const { stylesheet } = useContext(context);
     const theme = stylesheet.mainTheme
-    const style = {
-        ...theme,
-        height: '100vh'
-    }
     return (
-        <div style={style}>
-            <SearchAndFilter style={stylesheet.elementTheme} />
-
+        <div style={theme} className='home'>
+            <SearchAndFilter theme={stylesheet.elementTheme} />
+            <CountryCardContainer />
         </div>
 
     )
