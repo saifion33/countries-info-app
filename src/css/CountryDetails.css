@@ -1,6 +1,7 @@
 .country-details-container {
     height: fit-content;
     padding: 3rem 5rem;
+    overflow: hidden;
 }
 
 .back-btn {
@@ -35,6 +36,7 @@ i {
 .country-description-container {
     width: 50%;
     padding: 3rem;
+    overflow: hidden;
 }
 
 .country-name-2 {
@@ -47,23 +49,37 @@ i {
 .description-container {
     display: flex;
     flex-direction: column;
-    height: 10rem;
+    max-height: 10rem;
     flex-wrap: wrap;
 }
 
 .description-container p {
     margin: 0.5rem 0;
+
+}
+
+.description-container span {
+    margin-right: 0.4rem;
 }
 
 .border-countries-container {
-    display: flex;
     margin-top: 2rem;
     padding: 0 0.8rem;
+    display: flex;
+    width: 100%;
 }
+
 
 .border-countries-container p {
     margin-right: 1rem;
     font-weight: 600;
+    width: max-content;
+}
+
+.button-container {
+    display: flex;
+    width: max-content;
+    overflow-y: auto;
 }
 
 .border-countries-container button {
@@ -75,4 +91,5 @@ i {
     border-radius: 3px;
     box-shadow: 0 0 5px hsl(0, 0%, 80%);
     letter-spacing: 1px;
+    width: max-content;
 }

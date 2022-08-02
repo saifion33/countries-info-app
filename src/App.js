@@ -13,9 +13,10 @@ import context from './context/context';
 
 
 function App() {
-  const { allCountries, fetchCountries } = useContext(context)
+  const { allCountries, fetchCountries, countriesCodeNames } = useContext(context);
   useEffect(() => {
     fetchCountries();
+
     // eslint-disable-next-line
   }, [])
   return (
@@ -24,7 +25,7 @@ function App() {
         <HeadBar />
         <Routes>
           <Route exact path='/all-countries' element={<Home />}></Route>
-          {allCountries.map(country => <Route exact path={`all-countries/${country.name}`} key={country.name} element={<CountryDetails countryDetails={country} />}></Route>
+          {allCountries.map(country => <Route exact path={`all-countries/${country.name.replace(/\s/g, '-')}`} key={country.name} element={<CountryDetails countryDetails={country} countriesCodeNames={countriesCodeNames} />}></Route>
           )}
         </Routes>
       </Router>

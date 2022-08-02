@@ -6,7 +6,7 @@ const SearchAndFilter = (props) => {
     const filterOpener = () => {
         if (filterOption.hidden) {
             setFilterOption({
-                height: '10rem',
+                height: '12rem',
                 hidden: false,
 
             })
@@ -15,7 +15,6 @@ const SearchAndFilter = (props) => {
             setFilterOption({
                 height: '0',
                 hidden: true,
-
             })
         }
     }
@@ -24,23 +23,32 @@ const SearchAndFilter = (props) => {
     const [filterOption, setFilterOption] = useState({ height: '0', hidden: true })
 
     const filterOptionStyle = {
-        ...props.theme,
+        ...props.theme.elementTheme,
         height: filterOption.height,
     }
+    const regionFilter = (e, regionName) => {
+        e.preventDefault();
+        props.setCountries(props.allCountries.filter(country => country.region === regionName))
+    }
+    const resetFilter = (e) => {
+        e.preventDefault();
+        props.setCountries(props.allCountries);
+    }
     return (
-        <div className='search-and-filter-box-container' >
-            <div style={props.theme} className='search-box' >
+        <div style={{ ...props.theme.mainTheme }} className='search-and-filter-box-container' >
+            <div style={props.theme.elementTheme} className='search-box' >
                 <i className="fa-solid fa-magnifying-glass search-icon"></i>
-                <input className='search-box-input' style={props.theme} type="text" tabIndex={1} placeholder='Search for a country...' />
+                <input className='search-box-input' style={props.theme.elementTheme} type="text" tabIndex={2} placeholder='Search for a country...' />
             </div>
-            <div style={props.theme} className='filter-box' >
-                <p onClick={filterOpener}>Filter by Region <i className="fa-solid fa-angle-down"></i></p>
+            <div style={props.theme.elementTheme} className='filter-box' >
+                <p onClick={filterOpener} tabIndex={3} >Filter by Region <i className="fa-solid fa-angle-down"></i></p>
                 <div style={filterOptionStyle} className='filter-box-options-container' >
-                    <p>Africa</p>
-                    <p>America</p>
-                    <p>Asia</p>
-                    <p>Europe</p>
-                    <p>Ocianica</p>
+                    <p key={'Africa'} onClick={event => regionFilter(event, 'Africa')} >Africa</p>
+                    <p key={'Americas'} onClick={event => regionFilter(event, 'Americas')}>Americas</p>
+                    <p key={'Asia'} onClick={event => regionFilter(event, 'Asia')}>Asia</p>
+                    <p key={'Europe'} onClick={event => regionFilter(event, 'Europe')}>Europe</p>
+                    <p key={'Oceania'} onClick={event => regionFilter(event, 'Oceania')}>Oceania</p>
+                    <p key={'Reset'} onClick={event => resetFilter(event)}>Reset filter</p>
                 </div>
             </div>
         </div>

@@ -13,8 +13,12 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 3px 3px 10px hsl(0, 0%, 80%);
+  box-shadow: 3px 3px 5px hsl(0, 0%, 80%);
   box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 2;
 }
 
 .head-bar p {
@@ -27,11 +31,15 @@ html {
 }
 
 .home {
-  height: fit-content;
+  height: min-content;
 }
 
 .country-card-container {
-  height: 100%;
+  min-height: 70vh;
+  height: min-content;
   padding: 3rem;
   display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }

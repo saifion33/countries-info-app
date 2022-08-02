@@ -1,14 +1,16 @@
 import React, { useContext } from 'react'
+
 import context from '../context/context'
 import CountryCard from './CountryCard'
-
+import Spinner from './Spinner'
 const CountryCardContainer = () => {
-    const { changeCountry, allCountries, currentCountry } = useContext(context)
+    const { allCountries,countries } = useContext(context)
 
     return (
         <div className='country-card-container' >
+            {allCountries.length === 0 && <Spinner />}
             {
-                allCountries.map(country => <CountryCard key={country.name} countryDetails={country} changeCountry={changeCountry} currentCountry={currentCountry} />)
+                countries.map(country => <CountryCard key={country.name} countryDetails={country} />)
             }
         </div>
     )

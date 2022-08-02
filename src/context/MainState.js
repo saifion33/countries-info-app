@@ -43,70 +43,26 @@ const MainState = (props) => {
             setLightTheme(true)
         }
     }
+    const [allCountries, setAllCountries] = useState([]);
+    const [countries, setCountries] = useState([])
+    const [countriesCodeNames, setCountriesCodeNames] = useState({})
+    const convertArrayToObject = (array) => {
+        const obj = {};
+        array.map(item => {
+            const key = Object.keys(item)[0]
+            const value = item[Object.keys(item)[0]]
+            obj[key] = value;
+            return 0
+        })
+        return obj;
+    };
 
-    // ******************************** COUNTRIES STATE RELATED ************************************************
-
-    const allCountries = [
-        {
-            name: 'Portugal',
-            nativeName: 'Portugal',
-            topLevelDomain: 'Pt',
-            capital: 'Knaat',
-            population: '34000505',
-            region: 'Europe',
-            subRegion: 'Europe',
-            borderCountries: ['India', 'America', 'Canada', 'France', 'Germany'],
-            currencies: 'USD',
-            languages: 'portuguese',
-            flag: 'https://flagcdn.com/pt.svg'
-        },
-        {
-            name: 'India',
-            nativeName: 'India',
-            topLevelDomain: 'In',
-            capital: 'New Delhi',
-            population: '34000505',
-            region: 'Asia',
-            subRegion: 'South Asia',
-            borderCountries: ['Pakistan', 'China', 'Nepal', 'Bangladesh'],
-            currencies: 'INR',
-            languages: 'Hindi,English',
-            flag: 'https://flagcdn.com/in.svg'
-        },
-        {
-            name: 'Pakistan',
-            nativeName: 'pakistan',
-            topLevelDomain: 'Pk',
-            capital: 'Islamabad',
-            population: '034458584',
-            region: 'Asia',
-            subRegion: 'South Asia',
-            borderCountries: ['India', 'Afganistan', 'Iran', 'China'],
-            currencies: 'PKR',
-            languages: 'urdu, hindi',
-            flag: 'https://flagcdn.com/pk.svg'
-        },
-        {
-            name: 'Nepal',
-            nativeName: 'nepal',
-            topLevelDomain: 'Ne',
-            capital: 'Kathmandu',
-            population: '34000505',
-            region: 'Asia',
-            subRegion: 'South Asia',
-            borderCountries: ['India', 'China', 'Tibbet'],
-            currencies: 'USD',
-            languages: 'Nepali,Hindi',
-            flag: 'https://flagcdn.com/np.svg'
-        }
-    ];
-    const [rawData, setRawData] = useState([]);
 
     const fetchCountries = async () => {
         const URL = 'https://restcountries.com/v3.1/all';
         const response = await fetch(URL);
         const json = await response.json();
-        setRawData(json.map(country => {
+        const countriesData = json.map(country => {
             const native = country.name.nativeName
             const currencies = country.currencies
             return ({
@@ -121,13 +77,18 @@ const MainState = (props) => {
                 population: country.population,
                 borderCountries: country.borders,
                 topLevelDomain: country.tld?.[0],
+                codeName: country.cioc,
+
             })
-        }))
+        })
+        setAllCountries(countriesData);
+        setCountries(countriesData);
+        setCountriesCodeNames(convertArrayToObject(json.map(country => { return ({ [country.cca3]: country.name.common }) })));
     }
 
 
     return (
-        <context.Provider value={{ stylesheet, changeTheme, lightTheme, fetchCountries, allCountries, rawData }} >
+        <context.Provider value={{ stylesheet, changeTheme, lightTheme, fetchCountries, allCountries, setCountries, countries, countriesCodeNames, }} >
             {props.children}
         </context.Provider>
     )
