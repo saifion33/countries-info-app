@@ -13,7 +13,7 @@ const CountryCard = (props) => {
                 <img className='flag-image' src={country.flag} alt="flag" />
                 <div className='description-container'>
                     <h3 className='country-name'>{country.name.slice(0, 20)}</h3>
-                    <p>Population: <span>{country.population}</span></p>
+                    <p>Population: <span>{country.population.toString().length > 8 ? country.population.toString().slice(0, 8) + '...' : country.population}</span></p>
                     <p>Region: <span>{country.region}</span></p>
                     <p>Capital: <span>{country.capital?.slice(0, 15)}</span></p>
                 </div>

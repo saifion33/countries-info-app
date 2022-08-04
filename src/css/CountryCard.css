@@ -19,6 +19,9 @@
 .description-container {
     padding: 0 0.8rem;
     height: min-content;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
 }
 
 .country-name {
