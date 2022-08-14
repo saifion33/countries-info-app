@@ -6,7 +6,8 @@ import Home from './components/Home';
 import {
   BrowserRouter as Router,
   Route,
-  Routes
+  Routes,
+  Navigate
 } from "react-router-dom";
 import { useContext, useEffect } from 'react';
 import context from './context/context';
@@ -24,6 +25,7 @@ function App() {
       <Router>
         <HeadBar />
         <Routes>
+          <Route path="/" element={<Navigate to="/all-countries" />} />
           <Route exact path='/all-countries' element={<Home />}></Route>
           {allCountries.map(country => <Route exact path={`all-countries/${country.name.replace(/\s/g, '-')}`} key={country.name} element={<CountryDetails countryDetails={country} countriesCodeNames={countriesCodeNames} />}></Route>
           )}

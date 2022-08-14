@@ -24,25 +24,29 @@ const MainState = (props) => {
 
     const [stylesheet, setStylesheet] = useState({
         mainTheme: lightThemeMain,
-        elementTheme: lightThemeElement
+        elementTheme: lightThemeElement,
+
     })
 
     const changeTheme = () => {
         if (lightTheme) {
             setStylesheet({
                 mainTheme: darkThemeMain,
-                elementTheme: darkThemeElement
+                elementTheme: darkThemeElement,
+
             })
             setLightTheme(false)
         }
         else {
             setStylesheet({
                 mainTheme: lightThemeMain,
-                elementTheme: lightThemeElement
+                elementTheme: lightThemeElement,
+
             })
             setLightTheme(true)
         }
     }
+    // 
     const [allCountries, setAllCountries] = useState([]);
     const [countries, setCountries] = useState([])
     const [countriesCodeNames, setCountriesCodeNames] = useState({})

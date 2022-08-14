@@ -1,11 +1,11 @@
 .search-and-filter-box-container {
     display: flex;
     justify-content: space-between;
-    padding: 2.5rem 2rem;
+    padding: 2.8rem 5rem 1rem 5rem;
     position: sticky;
     top: 4.8rem;
     left: 0;
-    
+
 }
 
 .search-box {
@@ -52,10 +52,38 @@
     width: 100%;
     overflow: hidden;
     box-sizing: border-box;
-    padding-left: 1rem;
+    padding: 0 0.6rem;
     box-shadow: 0 0 5px hsl(0, 0%, 80%);
+    border-radius: 0.3rem;
 }
 
 .filter-box-options-container p {
     margin: 0.5rem 0;
+    padding: 0.2rem;
+    border-radius: 0.2rem;
+}
+
+.active-filter {
+    box-shadow: 0 0 0.3rem hsl(0, 0%, 80%);
+}
+
+@media screen and (max-width: 400px) {
+    .search-and-filter-box-container {
+        padding: 2rem 1rem;
+        flex-wrap: wrap;
+        top: 3.8rem;
+
+    }
+
+    .search-box {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 0.8rem;
+    }
+
+    .filter-box {
+        margin-top: 1rem;
+        padding: 0.6rem 0.8rem;
+    }
 }

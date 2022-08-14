@@ -1,7 +1,9 @@
 .country-details-container {
-    height: fit-content;
+    height: 91vh;
     padding: 3rem 5rem;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .back-btn {
@@ -22,6 +24,8 @@ i {
 .img-and-desc-container {
     display: flex;
     padding: 3rem 0;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 .flag-image-container {
@@ -92,4 +96,41 @@ i {
     box-shadow: 0 0 5px hsl(0, 0%, 80%);
     letter-spacing: 1px;
     width: max-content;
+}
+
+@media screen and (max-width:400px) {
+    .country-details-container {
+        padding: 2.5rem 1rem;
+
+    }
+
+    .flag-image-container {
+        width: 100%;
+        padding: 0;
+    }
+
+    .country-description-container {
+        width: 100%;
+        overflow: visible;
+        padding: 0;
+
+    }
+
+    .description-container {
+        max-height: max-content;
+        width: 100%;
+
+        max-height: 16rem;
+    }
+
+    .border-countries-container {
+        margin: 0;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .button-container {
+        padding: 0.6rem 0;
+
+    }
 }
