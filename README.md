@@ -14,7 +14,7 @@ This is a solution to the [REST Countries API with color theme switcher challeng
 
 ### Screenshot
 
-![space tourism websit screenshot](https://github.com/saifion33/advice-generator-app/blob/main/images/Screenshot%20%20Advice%20Generator.png)
+![Countries info app screenshot](https://github.com/saifion33/countries-info-app/blob/master/public/screenshot/rest%20countries%20screenshot.png)
 
 
 
