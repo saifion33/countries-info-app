@@ -14,7 +14,7 @@ This is a solution to the [REST Countries API with color theme switcher challeng
 
 ### Screenshot
 
-![Countries info app screenshot](https://github.com/saifion33/countries-info-app/blob/master/public/screenshot/rest%20countries%20screenshot.png)
+![Countries info app screenshot](https://github.com/saifion33/countries-info-app/blob/master/public/screenshot/countries%20info%20app%20screenshot.png)
 
 
 
