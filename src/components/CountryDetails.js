@@ -13,7 +13,7 @@ const CountryDetails = (props) => {
     return (
         <div style={theme} className="country-details-container">
             <div className="navigation-bar">
-                <Link to={'/all-countries'} ><button style={stylesheet.elementTheme} className="back-btn"><i className="fa-solid fa-arrow-left-long"></i> Back</button></Link>
+                <Link to={'/'} ><button style={stylesheet.elementTheme} className="back-btn"><i className="fa-solid fa-arrow-left-long"></i> Back</button></Link>
             </div>
             <div className="img-and-desc-container">
                 <div className="flag-image-container">
