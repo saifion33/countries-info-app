@@ -7,7 +7,6 @@ import {
   BrowserRouter as Router,
   Route,
   Routes,
-  Navigate
 } from "react-router-dom";
 import { useContext, useEffect } from 'react';
 import context from './context/context';

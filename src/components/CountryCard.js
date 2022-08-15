@@ -8,7 +8,7 @@ const CountryCard = (props) => {
     const theme = stylesheet.elementTheme;
     const country = props.countryDetails;
     return (
-        <Link style={{ textDecoration: 'none' }} to={country.name.replace(/\s/g, '-')} >
+        <Link style={{ textDecoration: 'none' }} to={`./${country.name.replace(/\s/g, '-')}`} >
             <div style={theme} className='country-card'>
                 <img className='flag-image' src={country.flag} alt="flag" />
                 <div className='description-container'>

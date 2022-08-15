@@ -34,7 +34,7 @@ const CountryDetails = (props) => {
                     <div className="border-countries-container">
                         <p>Border Countries: </p>
                         <div className="button-container">
-                            {borderCountries?.map(borderCountry => <Link key={borderCountry} style={{ textDecoration: 'none' }} to={`../all-countries/${borderCountry.replace(/\s/g, '-')}`} ><Button theme={stylesheet.elementTheme} name={borderCountry} /></Link>)}
+                            {borderCountries?.map(borderCountry => <Link key={borderCountry} style={{ textDecoration: 'none' }} to={`../${borderCountry.replace(/\s/g, '-')}`} ><Button theme={stylesheet.elementTheme} name={borderCountry} /></Link>)}
                         </div>
                     </div>
                 </div>
