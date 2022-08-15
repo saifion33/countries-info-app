@@ -21,7 +21,7 @@ This is a solution to the [REST Countries API with color theme switcher challeng
 ### Links
 
 - Solution : [solution on frontend menter]()
-- Live Site : [See live preview](https://62f8e1c04a1d065a9bc7317c--rest-count.netlify.app/)
+- Live Site : [See live preview](https://62f8e76c0d2699607a423132--rest-count.netlify.app)
 
 ### Built with
 
